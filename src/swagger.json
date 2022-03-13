@@ -1,0 +1,155 @@
+{
+    "openapi":"3.0.0",
+    "info":{
+        "title":"API de cadastro de usuários",
+        "description":"Essa api tem como principal objetivo o cadastro de novos usuários",
+        "contact":{
+            "email":"josecatanaoneto@gmail.com"
+        },
+        "version":"1.0.0"
+    },
+    "servers":[
+        {
+            "url":"localhost:3000/",
+            "description":"API de teste"
+        }
+    ],
+    "paths":{
+        "/login":{
+            "post":{
+                "summary":"Faz o login do usuário",
+                "description":"Essa rota será responsavel por fazer o login do usuário",
+                "tags":["Users"],
+                "requestBody":{
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "properties":{
+                                    "name":{
+                                        "type":"string"
+                                    },
+                                    "password":{
+                                        "type":"string"
+                                    } 
+                                }
+                            },
+                            "examples":{
+                                "User":{
+                                    "value":{
+                                        "name":"jose",
+                                        "password":"123"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/":{
+            "get":{
+                "summary":"Mostra todos os usuários cadastrados",
+                "description":"Essa rota será responsavel por mostrar todos os usuários cadastrados",
+                "tags":["Users"]
+            }
+        },
+
+        "/:id":{
+            "get":{
+                "summary":"Mostra um usuario cadastrado pelo id",
+                "description":"Essa rota será responsavel por mostrar informações de um unico usuário pelo id",
+                "tags":["Users"]
+            }
+        },
+
+        "/cadastro":{
+            "post":{
+                "summary":"Cadastra o usuario.",
+                "description":"Essa rota será responsavel por cadastrar usuário",
+                "tags":["Users"],
+                "requestBody":{
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "properties":{
+                                    "name":{
+                                        "type":"string"
+                                    },
+                                    "email":{
+                                        "type":"string"
+                                    },
+                                    "password":{
+                                        "type":"string"
+                                    } 
+                                }
+                            },
+                            "examples":{
+                                "User":{
+                                    "value":{
+                                        "name":"jose",
+                                        "email":"josecatanoneto@gmail.com",
+                                        "password":"123"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/id":{
+            "put":{
+                "summary":"Editando dados do usuario",
+                "description":"Essa rota será responsavel por editar usuário",
+                "tags":["Users"],
+                "requestBody":{
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "properties":{
+                                    "name":{
+                                        "type":"string"
+                                    },
+                                    "email":{
+                                        "type":"string"
+                                    },
+                                    "password":{
+                                        "type":"string"
+                                    } 
+                                }
+                            },
+                            "examples":{
+                                "User":{
+                                    "value":{
+                                        "name":"jose",
+                                        "email":"josecatanoneto@gmail.com",
+                                        "password":"123"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/:<id>":{
+            "delete":{
+                "summary":"Deleta o usuario pelo id",
+                "description":"Essa rota será responsavel por mostrar informações de um unico usuário pelo id",
+                "tags":["Users"]
+            }
+        },
+        
+        "/api-docs":{
+            "get":{
+                "summary":"Mostra a documentação da Api",
+                "description":"Essa rota será responsavel por mostrar a documentação da API ",
+                "tags":["Users"]
+            }
+        }
+
+    }
+}
